@@ -3,9 +3,18 @@ package com.projetweb.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class User implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
+	
+	
+	@Id //especificar a a chave primaria
+	@GeneratedValue(strategy= GenerationType.IDENTITY)// auto incremento
 	private Long id;
 	private String name;
 	private String email;
